@@ -17,6 +17,9 @@ const MovieSchema = new mongoose.Schema({
 });
 const Movie=mongoose.model("Movie",MovieSchema);
 const app = express();
+app.get('/', (req, res) => {
+    res.send("Mongoose Express App is Running");
+});
 app.use(express.json());
 app.post("/api/v1/movies", (req, res) => {
     const newMovie =req.body;
